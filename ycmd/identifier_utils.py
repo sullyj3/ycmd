@@ -73,6 +73,12 @@ FILETYPE_TO_IDENTIFIER_REGEX = {
     # Spec: http://www.haskell.org/onlinereport/lexemes.html
     # Section 2.4
     'haskell': re.compile( r"[_a-zA-Z][\w']*", re.UNICODE ),
+
+    # Spec: http://www.schemers.org/Documents/Standards/R5RS/HTML/
+    # Section 2.1
+    'scheme': re.compile(
+         r"(?<=[\s\(]|^)[_a-zA-Z!$%&*+\-./:<=>?@^~][\w!$%&*+\-./:<=>?@^~]*(?=[\s\)]|$)",
+         re.UNICODE ),
 }
 
 FILETYPE_TO_IDENTIFIER_REGEX[ 'scss' ] = FILETYPE_TO_IDENTIFIER_REGEX[ 'css' ]
